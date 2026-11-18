@@ -29,15 +29,16 @@ df = pd.read_csv(url)
 
 ---
 
-# Module 9 data — the three PyTorch demonstrations
+# Module 9 data — the PyTorch demonstrations
 
-Three small **synthetic** tables with no story: two features, `x1` and `x2`, and an answer, `y`, 500 rows each. Each is used by one of Module 9's demonstration notebooks, which learn from the first 400 rows and hold back the last 100. The rows are in random order. Each file was made from a simple rule plus chance, and the notebooks state the rule, so that what a model learns can be checked against it. Released **CC0** (public domain).
+Four small **synthetic** tables with no story: two features, `x1` and `x2`, and an answer, `y`, 500 rows each. Each is used by one of Module 9's demonstration notebooks, which learn from the first 400 rows and hold back the last 100. The rows are in random order. Each file was made from a simple rule plus chance, and the notebooks state the rule, so that what a model learns can be checked against it. Released **CC0** (public domain).
 
 | File | `x1`, `x2` | `y` | The rule | Used by |
 |---|---|---|---|---|
 | `demo_linear.csv` | numbers between −1 and 1 | a number | y = 3 × x1 − 2 × x2 + 1, plus a little random noise | Notebook 1: linear regression |
 | `demo_logistic.csv` | numbers mostly between −3 and 3 | 0 or 1 | score = 2 × x1 − x2; the higher the score, the more often y is 1 (the probability of a 1 is the sigmoid of the score) | Notebook 2: logistic regression |
 | `demo_network.csv` | numbers mostly between −3 and 3 | 0 or 1 | y is nearly always 1 when x1 and x2 are within 1 of each other, and nearly always 0 when they are further apart | Notebook 3: a small neural network |
+| `demo_three_classes.csv` | numbers mostly between −3 and 3 | 0, 1 or 2 | each class is a cloud of points around its own centre: class 0 around (0, 1.2), class 1 around (−1.2, −0.8), class 2 around (1.2, −0.8). The clouds overlap | Notebook 4: three classes, mini-batches, early stopping, dropout |
 
 ```python
 import pandas as pd
