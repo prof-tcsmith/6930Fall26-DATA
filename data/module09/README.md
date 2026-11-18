@@ -29,7 +29,26 @@ df = pd.read_csv(url)
 
 ---
 
-# Module 9 data — Tamarack Plastics (the three PyTorch demonstrations)
+# Module 9 data — the three PyTorch demonstrations
+
+Three small **synthetic** tables with no story: two features, `x1` and `x2`, and an answer, `y`, 500 rows each. Each is used by one of Module 9's demonstration notebooks, which learn from the first 400 rows and hold back the last 100. The rows are in random order. Each file was made from a simple rule plus chance, and the notebooks state the rule, so that what a model learns can be checked against it. Released **CC0** (public domain).
+
+| File | `x1`, `x2` | `y` | The rule | Used by |
+|---|---|---|---|---|
+| `demo_linear.csv` | numbers between −1 and 1 | a number | y = 3 × x1 − 2 × x2 + 1, plus a little random noise | Notebook 1: linear regression |
+| `demo_logistic.csv` | numbers mostly between −3 and 3 | 0 or 1 | score = 2 × x1 − x2; the higher the score, the more often y is 1 (the probability of a 1 is the sigmoid of the score) | Notebook 2: logistic regression |
+| `demo_network.csv` | numbers mostly between −3 and 3 | 0 or 1 | y is nearly always 1 when x1 and x2 are within 1 of each other, and nearly always 0 when they are further apart | Notebook 3: a small neural network |
+
+```python
+import pandas as pd
+url = "https://raw.githubusercontent.com/prof-tcsmith/6930Fall26-DATA/main/data/module09/demo_linear.csv"
+df = pd.read_csv(url)
+```
+
+# Module 9 data — Tamarack Plastics (an earlier version of the demonstrations)
+
+*The three tables below are not used by the current Module 9 notebooks, which read the `demo_` files above.*
+
 
 Three small **synthetic** tables about the fictional company Tamarack Plastics, which molds plastic parts to order. Each is used by one of Module 9's demonstration notebooks. No row describes a real job, customer or part. Released **CC0** (public domain).
 
